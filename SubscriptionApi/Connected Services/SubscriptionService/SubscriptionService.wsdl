@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SubscriptionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49940/SubscriptionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49940/SubscriptionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49940/SubscriptionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SubscriptionService.DataContract" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISubscriptionService_GetUsersData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersData" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetUsersData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetUserData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetUserData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetSubscriptionsData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionsData" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetSubscriptionsData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetSubscriptionData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionData" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_GetSubscriptionData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubscriptionDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_AddSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSubscription" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_AddSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_UpdateSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubscription" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_UpdateSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_DeleteSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubscription" />
+  </wsdl:message>
+  <wsdl:message name="ISubscriptionService_DeleteSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISubscriptionService">
+    <wsdl:operation name="GetUsersData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/GetUsersData" message="tns:ISubscriptionService_GetUsersData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/GetUsersDataResponse" message="tns:ISubscriptionService_GetUsersData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/GetUserData" message="tns:ISubscriptionService_GetUserData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/GetUserDataResponse" message="tns:ISubscriptionService_GetUserData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/AddUser" message="tns:ISubscriptionService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/AddUserResponse" message="tns:ISubscriptionService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/UpdateUser" message="tns:ISubscriptionService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/UpdateUserResponse" message="tns:ISubscriptionService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/DeleteUser" message="tns:ISubscriptionService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/DeleteUserResponse" message="tns:ISubscriptionService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionsData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/GetSubscriptionsData" message="tns:ISubscriptionService_GetSubscriptionsData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/GetSubscriptionsDataResponse" message="tns:ISubscriptionService_GetSubscriptionsData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/GetSubscriptionData" message="tns:ISubscriptionService_GetSubscriptionData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/GetSubscriptionDataResponse" message="tns:ISubscriptionService_GetSubscriptionData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/AddSubscription" message="tns:ISubscriptionService_AddSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/AddSubscriptionResponse" message="tns:ISubscriptionService_AddSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/UpdateSubscription" message="tns:ISubscriptionService_UpdateSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/UpdateSubscriptionResponse" message="tns:ISubscriptionService_UpdateSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubscriptionService/DeleteSubscription" message="tns:ISubscriptionService_DeleteSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubscriptionService/DeleteSubscriptionResponse" message="tns:ISubscriptionService_DeleteSubscription_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISubscriptionService" type="tns:ISubscriptionService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsersData">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/GetUsersData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/GetUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionsData">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/GetSubscriptionsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriptionData">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/GetSubscriptionData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSubscription">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/AddSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubscription">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/UpdateSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubscription">
+      <soap:operation soapAction="http://tempuri.org/ISubscriptionService/DeleteSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SubscriptionService">
+    <wsdl:port name="BasicHttpBinding_ISubscriptionService" binding="tns:BasicHttpBinding_ISubscriptionService">
+      <soap:address location="http://localhost:49940/SubscriptionService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

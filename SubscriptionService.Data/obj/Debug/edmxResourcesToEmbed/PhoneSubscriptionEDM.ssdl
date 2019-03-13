@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhoneSubscriptionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionId" />
+    </Key>
+    <Property Name="SubscriptionId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="VatAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CallMinutes" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSubscriptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="SubscriptionId" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__UserSubsc__Subsc__4E88ABD4">
+    <End Role="Subscription" Type="Self.Subscription" Multiplicity="1" />
+    <End Role="UserSubscriptions" Type="Self.UserSubscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscription">
+        <PropertyRef Name="SubscriptionId" />
+      </Principal>
+      <Dependent Role="UserSubscriptions">
+        <PropertyRef Name="SubscriptionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserSubsc__UserI__4D94879B">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserSubscriptions" Type="Self.UserSubscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserSubscriptions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhoneSubscriptionDBModelStoreContainer">
+    <EntitySet Name="Subscription" EntityType="Self.Subscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSubscriptions" EntityType="Self.UserSubscriptions" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__UserSubsc__Subsc__4E88ABD4" Association="Self.FK__UserSubsc__Subsc__4E88ABD4">
+      <End Role="Subscription" EntitySet="Subscription" />
+      <End Role="UserSubscriptions" EntitySet="UserSubscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserSubsc__UserI__4D94879B" Association="Self.FK__UserSubsc__UserI__4D94879B">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserSubscriptions" EntitySet="UserSubscriptions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\SubscriptionService.Data.dll.config
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\SubscriptionService.Data.dll
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\SubscriptionService.Data.pdb
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\EntityFramework.dll
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\EntityFramework.xml
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\obj\Debug\SubscriptionService.Data.csprojAssemblyReference.cache
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\obj\Debug\SubscriptionService.Data.csproj.CoreCompileInputs.cache
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\obj\Debug\SubscriptionService.Data.csproj.CopyComplete
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\obj\Debug\SubscriptionService.Data.dll
+C:\Users\shivanshu\source\repos\SubscriptionService\SubscriptionService.Data\obj\Debug\SubscriptionService.Data.pdb

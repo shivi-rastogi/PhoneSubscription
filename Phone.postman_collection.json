@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "1cdb5310-013e-40bc-a6ea-7763ee2c30c2",
+		"name": "Phone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/User/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"User",
+						""
+					]
+				},
+				"description": "http://localhost:60258/api/User"
+			},
+			"response": []
+		},
+		{
+			"name": "get specific Subscription",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/Subscription/?id=2712e86a-d519-48af-b50b-194e9a2102dg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"Subscription",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2712e86a-d519-48af-b50b-194e9a2102dg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post Subscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"3712e86a-d519-48af-b50b-194e9a2102dg\",\n    \"name\": \"100 min deal\",\n    \"price\": 24,\n    \"priceIncVatAmount\": 30,\n    \"CallMinutes\": 50\n}"
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/Subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"Subscription"
+					]
+				},
+				"description": "http://localhost:60258/api/Subscription"
+			},
+			"response": []
+		},
+		{
+			"name": "put subscription",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": \"0781b4a4-7aca-4bdc-bf21-63d8b8dfc3af\",\n        \"name\": \"115 min deal\",\n        \"price\": 24,\n        \"priceIncVatAmount\": 30,\n        \"callminutes\": 50\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/Subscription/?id=0781b4a4-7aca-4bdc-bf21-63d8b8dfc3af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"Subscription",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0781b4a4-7aca-4bdc-bf21-63d8b8dfc3af"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 8,\n    \"firstname\": \"test4\",\n    \"lastname\": \"last1\",\n    \"email\": \"testlast@mail.com\",\n    \"subscriptions\": [\n        {\n            \"id\": \"4712e86a-d519-48af-b50b-194e9a2102de\",\n            \"name\": \"20 min deal\",\n            \"price\": 14,\n            \"priceIncVatAmount\": 0,\n            \"callminutes\": 20\n        },\n        {\n            \"id\": \"21ca4231-7fe2-4046-bb1f-0667bdcc9ee0\",\n            \"name\": \"100 min deal\",\n            \"price\": 24,\n            \"priceIncVatAmount\": 30,\n            \"callminutes\": 50\n        }\n    ],\n    \"totalPriceIncVatAmount\": 30,\n    \"totalcallminutes\": 120\n}"
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/User/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"User",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get specific user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/User/?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"User",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				},
+				"description": "http://localhost:60258/api/User/?id=5"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 10,\n    \"firstname\": \"test5\",\n    \"lastname\": \"last1\",\n    \"email\": \"testlast@mail.com\",\n    \"subscriptions\": [\n        {\n            \"id\": \"2712e86a-d519-48af-b50b-194e9a2102dg\",\n            \"name\": \"50 min deal11\",\n            \"price\": 24,\n            \"priceIncVatAmount  \": 30,\n            \"CallMinutes\": 50\n        }\n    ],\n    \"totalPriceIncVatAmount\":30.0,  \n\"totalcallminutes\":50  \n\n}"
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/User",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"User"
+					]
+				},
+				"description": "http://localhost:60258/api/User"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/User/?id=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"User",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8"
+						}
+					]
+				},
+				"description": "http://localhost:60258/api/User/?id=8"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all sunscriptions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/Subscription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"Subscription"
+					]
+				},
+				"description": "http://localhost:60258/api/Subscription"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete subscription",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:60258/api/Subscription/?id=3712e86a-d519-48af-b50b-194e9a2102dg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60258",
+					"path": [
+						"api",
+						"Subscription",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3712e86a-d519-48af-b50b-194e9a2102dg"
+						}
+					]
+				},
+				"description": "http://localhost:60258/api/Subscription/?id=3712e86a-d519-48af-b50b-194e9a2102dg"
+			},
+			"response": []
+		}
+	]
+}

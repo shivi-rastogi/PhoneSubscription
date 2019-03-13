@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhoneSubscriptionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Subscription">
+    <Key>
+      <PropertyRef Name="SubscriptionId" />
+    </Key>
+    <Property Name="SubscriptionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="VatAmount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="CallMinutes" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="UserSubscriptions" Relationship="Self.FK__UserSubsc__Subsc__4AB81AF0" FromRole="Subscription" ToRole="UserSubscriptions" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserSubscriptions" Relationship="Self.FK__UserSubsc__UserI__49C3F6B7" FromRole="User" ToRole="UserSubscriptions" />
+  </EntityType>
+  <EntityType Name="UserSubscription">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="SubscriptionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Subscription" Relationship="Self.FK__UserSubsc__Subsc__4AB81AF0" FromRole="UserSubscriptions" ToRole="Subscription" />
+    <NavigationProperty Name="User" Relationship="Self.FK__UserSubsc__UserI__49C3F6B7" FromRole="UserSubscriptions" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__UserSubsc__Subsc__4AB81AF0">
+    <End Role="Subscription" Type="Self.Subscription" Multiplicity="1" />
+    <End Role="UserSubscriptions" Type="Self.UserSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscription">
+        <PropertyRef Name="SubscriptionId" />
+      </Principal>
+      <Dependent Role="UserSubscriptions">
+        <PropertyRef Name="SubscriptionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserSubsc__UserI__49C3F6B7">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserSubscriptions" Type="Self.UserSubscription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserSubscriptions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhoneSubscriptionDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Subscriptions" EntityType="Self.Subscription" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserSubscriptions" EntityType="Self.UserSubscription" />
+    <AssociationSet Name="FK__UserSubsc__Subsc__4AB81AF0" Association="Self.FK__UserSubsc__Subsc__4AB81AF0">
+      <End Role="Subscription" EntitySet="Subscriptions" />
+      <End Role="UserSubscriptions" EntitySet="UserSubscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserSubsc__UserI__49C3F6B7" Association="Self.FK__UserSubsc__UserI__49C3F6B7">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserSubscriptions" EntitySet="UserSubscriptions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
